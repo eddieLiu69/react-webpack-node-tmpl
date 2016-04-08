@@ -1,0 +1,96 @@
+{
+  "version": "v4",
+  "repo": "borisyankov/DefinitelyTyped",
+  "ref": "master",
+  "path": "typings",
+  "bundle": "typings/tsd.d.ts",
+  "installed": {
+    "express/express.d.ts": {
+      "commit": "02b4b5c8e0f56cc576a3480dea362173ba7e277b"
+    },
+    "node/node.d.ts": {
+      "commit": "02b4b5c8e0f56cc576a3480dea362173ba7e277b"
+    },
+    "serve-favicon/serve-favicon.d.ts": {
+      "commit": "32f0a90dab26f70b206407ac24d4d622d0f0f408"
+    },
+    "cookie-parser/cookie-parser.d.ts": {
+      "commit": "32f0a90dab26f70b206407ac24d4d622d0f0f408"
+    },
+    "body-parser/body-parser.d.ts": {
+      "commit": "32f0a90dab26f70b206407ac24d4d622d0f0f408"
+    },
+    "debug/debug.d.ts": {
+      "commit": "32f0a90dab26f70b206407ac24d4d622d0f0f408"
+    },
+    "react/react-global.d.ts": {
+      "commit": "d6c51c607bd90c8bf0e065fabc41bc3f937425df"
+    },
+    "react/react-addons-create-fragment.d.ts": {
+      "commit": "d6c51c607bd90c8bf0e065fabc41bc3f937425df"
+    },
+    "react/react-dom.d.ts": {
+      "commit": "d6c51c607bd90c8bf0e065fabc41bc3f937425df"
+    },
+    "react/react-addons-linked-state-mixin.d.ts": {
+      "commit": "d6c51c607bd90c8bf0e065fabc41bc3f937425df"
+    },
+    "react/react-addons-css-transition-group.d.ts": {
+      "commit": "d6c51c607bd90c8bf0e065fabc41bc3f937425df"
+    },
+    "react/react-addons-perf.d.ts": {
+      "commit": "d6c51c607bd90c8bf0e065fabc41bc3f937425df"
+    },
+    "react/react-addons-pure-render-mixin.d.ts": {
+      "commit": "d6c51c607bd90c8bf0e065fabc41bc3f937425df"
+    },
+    "react/react-addons-test-utils.d.ts": {
+      "commit": "d6c51c607bd90c8bf0e065fabc41bc3f937425df"
+    },
+    "react/react-addons-update.d.ts": {
+      "commit": "d6c51c607bd90c8bf0e065fabc41bc3f937425df"
+    },
+    "react/react.d.ts": {
+      "commit": "0144ad5a74053f2292424847259c4c8e1d0fecaa"
+    },
+    "react/react-addons-transition-group.d.ts": {
+      "commit": "d6c51c607bd90c8bf0e065fabc41bc3f937425df"
+    },
+    "react-router/react-router.d.ts": {
+      "commit": "02b4b5c8e0f56cc576a3480dea362173ba7e277b"
+    },
+    "react-router/history.d.ts": {
+      "commit": "02b4b5c8e0f56cc576a3480dea362173ba7e277b"
+    },
+    "axios/axios.d.ts": {
+      "commit": "8b3b453a104bb2a949580bbb4e8c81c2a10138b3"
+    },
+    "redux/redux.d.ts": {
+      "commit": "02b4b5c8e0f56cc576a3480dea362173ba7e277b"
+    },
+    "react-redux/react-redux.d.ts": {
+      "commit": "8b3b453a104bb2a949580bbb4e8c81c2a10138b3"
+    },
+    "mime/mime.d.ts": {
+      "commit": "02b4b5c8e0f56cc576a3480dea362173ba7e277b"
+    },
+    "serve-static/serve-static.d.ts": {
+      "commit": "02b4b5c8e0f56cc576a3480dea362173ba7e277b"
+    },
+    "react-router-redux/react-router-redux.d.ts": {
+      "commit": "02b4b5c8e0f56cc576a3480dea362173ba7e277b"
+    },
+    "redux-logger/redux-logger.d.ts": {
+      "commit": "02b4b5c8e0f56cc576a3480dea362173ba7e277b"
+    },
+    "redux-thunk/redux-thunk.d.ts": {
+      "commit": "02b4b5c8e0f56cc576a3480dea362173ba7e277b"
+    },
+    "es6-promise/es6-promise.d.ts": {
+      "commit": "0144ad5a74053f2292424847259c4c8e1d0fecaa"
+    },
+    "redux-devtools/redux-devtools.d.ts": {
+      "commit": "0144ad5a74053f2292424847259c4c8e1d0fecaa"
+    }
+  }
+}

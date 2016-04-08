@@ -1,0 +1,67 @@
+Naming Convention
+    javascript
+    css
+    html
+    file
+    url
+
+Server
+    NodeJS
+    Meteor
+    Express
+
+Client
+    ReactJS
+    react-rounter
+    Redux?
+    GraphQL?
+    Bootstrap
+    ---------
+    axios
+    jQuery?
+    Zepto?
+    ---------
+    SASS
+    CSS Module
+    PostCss
+    
+Test
+    sbt-js-test
+    karma
+    
+Configuration/Deploy Tool
+    Webpack
+    TSD or Typings
+    nodemon
+    Docker
+    Gulp?
+    
+    style-loader
+    css-loader
+    postcss-loader
+    sass-loader?
+    ts-loader
+    
+Language
+    Typescript(ES6 subset)
+
+Monitoring
+    GA
+    Relic?
+
+
+Multiple themes support?
+- Feature List
+    - how many pages
+- Web SSO
+    - OAuth
+    - Cookie/Session?
+    - CORS(EasyXdm?)
+_ Downstream systems Integration
+    - Integration mechanism
+- Security mechanism
+    - SQL injection?
+    - XSS?
+- i18n
+- How to handle static pages(e.g. HTC Account條款)
+
