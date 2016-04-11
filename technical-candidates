@@ -1,49 +1,56 @@
 Naming Convention
     javascript
     css
-    html
+    html (x)
     file
-    url
+    url(RESTFul) -> replace existing convention -> re-route
 
 Server
     NodeJS
-    Meteor
-    Express
+    Meteor? Need to be studied
+    Express? Depend on Meteor
 
 Client
     ReactJS
     react-rounter
-    Redux?
-    GraphQL?
-    Bootstrap
+    Redux
+    GraphQL??? No for now
+    Bootstrap???? react-bootstrap
+    RWD solution???
     ---------
-    axios
-    jQuery?
-    Zepto?
+    axios or Isomorphic fetch?
+    lodash
+    jQuery? No
+    Zepto? Jquery lite - No
+    ImmutableJS?
     ---------
     SASS
     CSS Module
     PostCss
     
 Test
-    sbt-js-test
+    sbt-js-test -> Jasmine
     karma
+    Jasmine
+    Mocha
     
 Configuration/Deploy Tool
     Webpack
-    TSD or Typings
+    TSD or Typings?? typings(Boris)
     nodemon
     Docker
-    Gulp?
+    Gulp? No
     
     style-loader
     css-loader
     postcss-loader
-    sass-loader?
+    sass-loader? No, using postcss-loader
     ts-loader
+    babel-loader?
     
 Language
     Typescript(ES6 subset)
+    ScalaJS?
 
 Monitoring
     GA
@@ -53,15 +60,15 @@ Monitoring
 Multiple themes support?
 - Feature List
     - how many pages
+- i18n
 - Web SSO
     - OAuth
     - Cookie/Session?
-    - CORS(EasyXdm?)
-_ Downstream systems Integration
+    - CORS(EasyXdm?) post message
+    - Downstream systems Integration
     - Integration mechanism
 - Security mechanism
     - SQL injection?
     - XSS?
-- i18n
 - How to handle static pages(e.g. HTC Account條款)
 
