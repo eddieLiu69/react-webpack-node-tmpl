@@ -7,19 +7,19 @@ var webpack = require('webpack');
 var app = express();
 
 // Find the appropriate database to connect to, default to localhost if not found.
-// var connect = function() {
-//   mongoose.connect(secrets.db, function(err, res) {
-//     if(err) {
-//       console.log('Error connecting to: ' + secrets.db + '. ' + err);
-//     }else {
-//       console.log('Succeeded connected to: ' + secrets.db);
-//     }
-//   });
-// };
-// connect();
+var connect = function() {
+  mongoose.connect(secrets.db, function(err, res) {
+    if(err) {
+      console.log('Error connecting to: ' + secrets.db + '. ' + err);
+    }else {
+      console.log('Succeeded connected to: ' + secrets.db);
+    }
+  });
+};
+connect();
 
-// mongoose.connection.on('error', console.log);
-// mongoose.connection.on('disconnected', connect);
+mongoose.connection.on('error', console.log);
+mongoose.connection.on('disconnected', connect);
 
 // Bootstrap models
 fs.readdirSync(__dirname + '/models').forEach(function(file) {
