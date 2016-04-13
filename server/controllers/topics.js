@@ -1,5 +1,4 @@
 var mongoose = require('mongoose');
-var _ = require('lodash');
 var Topic = mongoose.model('Topic');
 
 /**

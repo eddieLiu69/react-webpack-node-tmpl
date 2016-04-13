@@ -24,31 +24,29 @@ axios.defaults.baseURL = `http://${clientConfig.host}:${clientConfig.port}`;
  * @param initial state of the store, so that the client can be hydrated with the same state as the server
  * @param head - optional arguments to be placed into the head
  */
-function renderFullPage(renderedContent, initialState, head={
+function renderFullPage(renderedContent, initialState, head = {
   title: 'React Webpack Node',
   meta: '<meta name="viewport" content="width=device-width, initial-scale=1" />',
   link: '<link rel="stylesheet" href="/assets/styles/main.css"/>'
 }) {
   return `
-  <!doctype html>
+    <!doctype html>
     <html lang="">
+      <head>
+          ${head.title}
 
-    <head>
-        ${head.title}
+          ${head.meta}
 
-        ${head.meta}
-
-        ${head.link}
-    </head>
-    <body>
-    <div id="app">${renderedContent}</div>
-    <script>
-      window.__INITIAL_STATE__ = ${JSON.stringify(initialState)};
-    </script>
-    <script type="text/javascript" charset="utf-8" src="/assets/app.js"></script>
-    </body>
+          ${head.link}
+      </head>
+      <body>
+        <div id="app">${renderedContent}</div>
+      <script>
+        window.__INITIAL_STATE__ = ${JSON.stringify(initialState)};
+      </script>
+      <script type="text/javascript" charset="utf-8" src="/assets/app.js"></script>
+      </body>
     </html>
-
   `;
 }
 
@@ -58,18 +56,18 @@ function renderFullPage(renderedContent, initialState, head={
  * and pass it into the Router.run function.
  */
 export default function render(req, res) {
-    const history = createMemoryHistory();
-    const authenticated = req.isAuthenticated();
-    const store = configureStore({
-      user: {
-        authenticated: authenticated,
-        isWaiting: false,
-        message: '',
-        isLogin: true
-      }
-    }, history);
+  const history = createMemoryHistory();
+  const authenticated = req.isAuthenticated();
+  const store = configureStore({
+    user: {
+      authenticated: authenticated,
+      isWaiting: false,
+      message: '',
+      isLogin: true
+    }
+  }, history);
 
-    const routes = createRoutes(store);
+  const routes = createRoutes(store);
 
   /*
    * From the react-router docs:
@@ -101,24 +99,24 @@ export default function render(req, res) {
 
       const InitialView = (
         <Provider store={store}>
-            <RouterContext {...renderProps} />
+          <RouterContext {...renderProps} />
         </Provider>
       );
 
       //This method waits for all render component promises to resolve before returning to browser
       fetchComponentDataBeforeRender(store.dispatch, renderProps.components, renderProps.params)
-      .then(html => {
-        const componentHTML = renderToString(InitialView);
-        const initialState = store.getState();
-        res.status(200).end(renderFullPage(componentHTML, initialState, {
-          title: headconfig.title,
-          meta: headconfig.meta,
-          link: headconfig.link
-        }));
-      })
-      .catch(err => {
-        res.end(renderFullPage("",{}));
-      });
+        .then(html => {
+          const componentHTML = renderToString(InitialView);
+          const initialState = store.getState();
+          res.status(200).end(renderFullPage(componentHTML, initialState, {
+            title: headconfig.title,
+            meta: headconfig.meta,
+            link: headconfig.link
+          }));
+        })
+        .catch(err => {
+          res.end(renderFullPage("", {}));
+        });
     } else {
       res.status(404).send('Not Found');
     }

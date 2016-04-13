@@ -1,7 +1,8 @@
 /**
  * Routes for express app
  */
-var topics = require('../controllers/topics.ts');
+var topics = require('../controllers/topics');
+var comments = require('../controllers/comments');
 var express = require('express');
 var users = require('../controllers/users');
 var mongoose = require('mongoose');
@@ -10,11 +11,6 @@ var Topic = mongoose.model('Topic');
 var path = require('path');
 var compiled_app_module_path = path.resolve(__dirname, '../../', 'public', 'assets', 'server.js');
 var App = require(compiled_app_module_path);
-
-var path = require('path');
-var fs = require('fs');
-
-var COMMENTS_FILE = path.join(__dirname, '..', '..', 'comments.json');
 
 module.exports = function(app, passport) {
   // user routes
@@ -58,40 +54,12 @@ module.exports = function(app, passport) {
   });
   
   app.get('/api/comments', function(req, res) {    
-    fs.readFile(COMMENTS_FILE, function(err, data) {
-        if (err) {
-            console.error(err);
-            process.exit(1);
-        }
-        res.json(JSON.parse(data));
-    });
+    comments.getComments(req, res);
   });
   
   app.post('/api/comments', function(req, res) {
-    fs.readFile(COMMENTS_FILE, function(err, data) {
-        if (err) {
-            console.error(err);
-            process.exit(1);
-        }
-        var comments = JSON.parse(data);
-        // NOTE: In a real implementation, we would likely rely on a database or
-        // some other approach (e.g. UUIDs) to ensure a globally unique id. We'll
-        // treat Date.now() as unique-enough for our purposes.
-        var newComment = {
-            key: Date.now(),
-            author: req.body.author,
-            text: req.body.text,
-        };
-        comments.push(newComment);
-        fs.writeFile(COMMENTS_FILE, JSON.stringify(comments, null, 4), function(err) {
-        if (err) {
-            console.error(err);
-            process.exit(1);
-        }
-        res.json(comments);
-    });
+    comments.createComments(req, res);
   });
-});
 
   // This is where the magic happens. We take the locals data we have already
   // fetched and seed our stores with data.
