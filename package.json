@@ -77,7 +77,7 @@
     "isomorphic-fetch": "^2.2.0",
     "json-loader": "^0.5.4",
     "kerberos": "0.0.17",
-    "lodash": "^3.9.3",
+    "lodash": "^3.10.1",
     "method-override": "^2.3.5",
     "mongoose": "^4.3.4",
     "node-libs-browser": "^0.5.2",

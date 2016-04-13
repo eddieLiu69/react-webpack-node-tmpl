@@ -91,6 +91,9 @@
     },
     "redux-devtools/redux-devtools.d.ts": {
       "commit": "0144ad5a74053f2292424847259c4c8e1d0fecaa"
+    },
+    "lodash/lodash.d.ts": {
+      "commit": "641df27e73ca67fa7199a3deedae104198d41a17"
     }
   }
 }

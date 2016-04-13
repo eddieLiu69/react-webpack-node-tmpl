@@ -11,7 +11,8 @@ import About from './components/About';
 import Repos from './components/Repos';
 import Repo from './components/Repo';
 import Home from './components/Home';
-import CommentBox from './components/CommentBox';
+// import CommentBox from './components/CommentBox';
+import CommentBoard from './containers/Comment';
 import FilterableProductTable from './components/Product';
 
 /*
@@ -54,7 +55,7 @@ export default (store) => {
         <Route path="/repos/:userName/:repoName" component={Repo}/>
         </Route>
         <Route path="/about" component={About}/>
-        <Route path="/comments" component={CommentBox}/>
+        <Route path="/comments" component={CommentBoard}/>
         <Route path="/products" component={FilterableProductTable}/>
     </Route>
   );
