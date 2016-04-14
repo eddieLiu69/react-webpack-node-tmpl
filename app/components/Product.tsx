@@ -134,8 +134,3 @@ var PRODUCTS = [
 ];
 
 export default FilterableProductTable;
-
-// ReactDOM.render(
-//     <FilterableProductTable products={PRODUCTS} />,
-//     document.getElementById('container')
-// );

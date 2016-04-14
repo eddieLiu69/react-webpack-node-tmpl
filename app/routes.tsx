@@ -1,17 +1,10 @@
 import * as React from 'react';
 import { Route, IndexRoute } from 'react-router';
-
-// import App from './containers/App';
-// import Vote from 'containers/Vote';
-// import About from 'containers/About';
-// import LoginOrRegister from 'containers/LoginOrRegister';
-// import Dashboard from 'containers/Dashboard';
 import App from './components/App';
 import About from './components/About';
 import Repos from './components/Repos';
 import Repo from './components/Repo';
 import Home from './components/Home';
-// import CommentBox from './components/CommentBox';
 import CommentBoard from './containers/Comment';
 import FilterableProductTable from './components/Product';
 
@@ -43,12 +36,6 @@ export default (store) => {
 //   };
 
   return (
-    // <Route path="/" component={App}>
-    //   <IndexRoute component={Vote} />
-    //   <Route path="login" component={LoginOrRegister} onEnter={redirectAuth} />
-    //   <Route path="dashboard" component={Dashboard} onEnter={requireAuth} />
-    //   <Route path="about" component={About} />
-    // </Route>      
     <Route path="/" component={App}>
         <IndexRoute component={Home}/>
         <Route path="/repos" component={Repos}>
