@@ -1,6 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
-var assetsPath = path.join(__dirname, '..', 'public', 'assets');
+var assetsPath = path.join(__dirname, '..', 'build');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var fs = require('fs');
 
@@ -57,7 +57,7 @@ module.exports = [{
       // The filename of the entry chunk as relative path inside the output.path directory
       filename: "server.js",
       // The output path from the view of the Javascript
-      publicPath: "/assets/",
+      // publicPath: "/assets/",
       libraryTarget: "commonjs2"
     },
     module: {

@@ -6,12 +6,12 @@
   "scripts": {
     "lint": "eslint app",
     "clean": "rimraf public",
-    "start": "NODE_ENV=production node server/index.js",
-    "dev": "NODE_ENV=development nodemon & npm run watch",
+    "start": "NODE_ENV=production node build/index.js",
+    "dev": "npm run watch & NODE_ENV=development nodemon",
     "build:dev": "NODE_ENV=development webpack --colors --config ./webpack/webpack.config.dev-server.js",
     "build:prod": "NODE_ENV=production webpack --colors --config ./webpack/webpack.config.prod.js",
     "build": "npm run clean && npm run build:prod",
-    "watch": "tcm -w app",
+    "watch": "tcm -w app & tsc",
     "test": "NODE_ENV=test karma start",
     "test:watch": "NODE_ENV=test npm test -- --watch --no-single-run",
     "postinstall": "npm run build"

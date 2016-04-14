@@ -1,7 +1,7 @@
 import * as path from "path";
 import * as fs from "fs";
 
-const COMMENTS_FILE = path.join(__dirname, '..', '..', 'comments.json');
+const COMMENTS_FILE = path.join(__dirname, "..", "..", "comments.json");
 
 export const getComments = (req, res) => {
   fs.readFile(COMMENTS_FILE, (err, data: any) => res.json(JSON.parse(data)));

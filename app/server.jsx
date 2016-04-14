@@ -57,10 +57,10 @@ function renderFullPage(renderedContent, initialState, head = {
  */
 export default function render(req, res) {
   const history = createMemoryHistory();
-  const authenticated = req.isAuthenticated();
+  // const authenticated = req.isAuthenticated();
   const store = configureStore({
     user: {
-      authenticated: authenticated,
+      // authenticated: authenticated,
       isWaiting: false,
       message: '',
       isLogin: true

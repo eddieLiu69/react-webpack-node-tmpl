@@ -1,22 +1,23 @@
 {
-    "compilerOptions": {
-        "jsx": "react",
-		"target": "es5",
-		"module": "commonjs",
-        "sourceMap": false,
-        "noImplicitAny": false,
-        "removeComments": true,
-        "preserveConstEnums": true,
-        "watch": true        
-    },
-    "filesGlob": [
-        "./**/*.ts",
-        "./**/*.tsx",
-        "!./node_modules/**/*"
-    ],
-    "exclude": [
-        "node_modules",
-        "app",
-        "wwwroot"
-    ]
+  "compilerOptions": {
+    "jsx": "react",
+    "target": "es5",
+    "module": "commonjs",
+    "sourceMap": false,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "watch": true,
+    "outDir": "build/"
+  },
+  "filesGlob": [
+    "./**/*.ts",
+    "./**/*.tsx",
+    "!./node_modules/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "app",
+    "wwwroot"
+  ]
 }

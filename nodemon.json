@@ -2,5 +2,5 @@
     "verbose": false,
     "watch": ["app/server.jsx", "app/routes.jsx", "app/helmconfig.js", "server", "webpack"],
     "ext": "js jsx ts",
-    "exec": "npm run build:dev && node server/index.js"
+    "exec": "npm run build:dev && node build/index.js"
 }

@@ -6,10 +6,10 @@
   "bundle": "typings/tsd.d.ts",
   "installed": {
     "express/express.d.ts": {
-      "commit": "02b4b5c8e0f56cc576a3480dea362173ba7e277b"
+      "commit": "00e8cf6e000aa1d70fb21bd1da6456c62136e231"
     },
     "node/node.d.ts": {
-      "commit": "02b4b5c8e0f56cc576a3480dea362173ba7e277b"
+      "commit": "00e8cf6e000aa1d70fb21bd1da6456c62136e231"
     },
     "serve-favicon/serve-favicon.d.ts": {
       "commit": "32f0a90dab26f70b206407ac24d4d622d0f0f408"
@@ -72,10 +72,10 @@
       "commit": "8b3b453a104bb2a949580bbb4e8c81c2a10138b3"
     },
     "mime/mime.d.ts": {
-      "commit": "02b4b5c8e0f56cc576a3480dea362173ba7e277b"
+      "commit": "00e8cf6e000aa1d70fb21bd1da6456c62136e231"
     },
     "serve-static/serve-static.d.ts": {
-      "commit": "02b4b5c8e0f56cc576a3480dea362173ba7e277b"
+      "commit": "00e8cf6e000aa1d70fb21bd1da6456c62136e231"
     },
     "react-router-redux/react-router-redux.d.ts": {
       "commit": "02b4b5c8e0f56cc576a3480dea362173ba7e277b"
@@ -94,6 +94,24 @@
     },
     "lodash/lodash.d.ts": {
       "commit": "641df27e73ca67fa7199a3deedae104198d41a17"
+    },
+    "webpack/webpack.d.ts": {
+      "commit": "00e8cf6e000aa1d70fb21bd1da6456c62136e231"
+    },
+    "uglify-js/uglify-js.d.ts": {
+      "commit": "00e8cf6e000aa1d70fb21bd1da6456c62136e231"
+    },
+    "source-map/source-map.d.ts": {
+      "commit": "00e8cf6e000aa1d70fb21bd1da6456c62136e231"
+    },
+    "express-session/express-session.d.ts": {
+      "commit": "00e8cf6e000aa1d70fb21bd1da6456c62136e231"
+    },
+    "express-serve-static-core/express-serve-static-core.d.ts": {
+      "commit": "00e8cf6e000aa1d70fb21bd1da6456c62136e231"
+    },
+    "method-override/method-override.d.ts": {
+      "commit": "00e8cf6e000aa1d70fb21bd1da6456c62136e231"
     }
   }
 }
