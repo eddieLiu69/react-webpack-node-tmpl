@@ -8,26 +8,26 @@ var publicPath = "assets/";
 var distPath = path.join(__dirname, "..", "build");
 
 var commonLoaders = [
-  {
-    /*
-     * TC39 categorises proposals for babel in 4 stages
-     * Read more http://babeljs.io/docs/usage/experimental/
-     */
-    test: /\.js$|\.jsx$/,
-    loader: 'babel',
-    // Reason why we put this here instead of babelrc
-    // https://github.com/gaearon/react-transform-hmr/issues/5#issuecomment-142313637
-    query: {
-      "presets": ["es2015", "react", "stage-0"],
-      "plugins": [
-        "transform-react-remove-prop-types",
-        "transform-react-constant-elements",
-        "transform-react-inline-elements"
-      ]
-    },
-    include: path.join(__dirname, '..', 'app'),
-    exclude: path.join(__dirname, '/node_modules/')
-  },
+  // {
+  //   /*
+  //    * TC39 categorises proposals for babel in 4 stages
+  //    * Read more http://babeljs.io/docs/usage/experimental/
+  //    */
+  //   test: /\.js$|\.jsx$/,
+  //   loader: 'babel',
+  //   // Reason why we put this here instead of babelrc
+  //   // https://github.com/gaearon/react-transform-hmr/issues/5#issuecomment-142313637
+  //   query: {
+  //     "presets": ["es2015", "react", "stage-0"],
+  //     "plugins": [
+  //       "transform-react-remove-prop-types",
+  //       "transform-react-constant-elements",
+  //       "transform-react-inline-elements"
+  //     ]
+  //   },
+  //   include: path.join(__dirname, '..', 'app'),
+  //   exclude: path.join(__dirname, '/node_modules/')
+  // },
   {
     test: /\.ts$|\.tsx$/,
     loader: 'ts-loader',

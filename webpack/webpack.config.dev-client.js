@@ -4,21 +4,21 @@ var assetsPath = path.join(__dirname, '..', 'public', 'assets');
 var hotMiddlewareScript = 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000&reload=true';
 
 var commonLoaders = [
-  {
-    /*
-     * TC39 categorises proposals for babel in 4 stages
-     * Read more http://babeljs.io/docs/usage/experimental/
-     */
-    test: /\.js$|\.jsx$/,
-    loader: 'babel',
-    // Reason why we put this here instead of babelrc
-    // https://github.com/gaearon/react-transform-hmr/issues/5#issuecomment-142313637
-    query: {
-      "presets": ["react-hmre", "es2015", "react", "stage-0"]
-    },
-    include: path.join(__dirname, '..', 'app'),
-    exclude: path.join(__dirname, '/node_modules/')
-  },
+  // {
+  //   /*
+  //    * TC39 categorises proposals for babel in 4 stages
+  //    * Read more http://babeljs.io/docs/usage/experimental/
+  //    */
+  //   test: /\.js$|\.jsx$/,
+  //   loader: 'babel',
+  //   // Reason why we put this here instead of babelrc
+  //   // https://github.com/gaearon/react-transform-hmr/issues/5#issuecomment-142313637
+  //   query: {
+  //     "presets": ["react-hmre", "es2015", "react", "stage-0"]
+  //   },
+  //   include: path.join(__dirname, '..', 'app'),
+  //   exclude: path.join(__dirname, '/node_modules/')
+  // },
   {
     test: /\.tsx?$/,
     loader: 'ts-loader',
