@@ -49,4 +49,8 @@ public
 # Typescript definitely typed
 typings
 
+# Server site output js file of typescript
+# TODO: needs to find out the final solution
+server/controllers/*.js
+ 
 .swp
