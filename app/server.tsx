@@ -1,19 +1,20 @@
+/// <reference path="../typings/tsd.d.ts" />
 import * as React from 'react';
 import { renderToString } from 'react-dom/server';
-import { RouterContext, match, createMemoryHistory } from 'react-router'
-import * as axios from 'axios';
+import { RouterContext, match } from 'react-router';
+import { createMemoryHistory } from 'history';
 import { Provider } from 'react-redux';
-import createRoutes from 'routes';
-import configureStore from 'store/configureStore';
-import headconfig from 'components/Meta';
-import { fetchComponentDataBeforeRender } from 'api/fetchComponentDataBeforeRender';
 
+import { fetchComponentDataBeforeRender } from './api/fetchComponentDataBeforeRender';
+import createRoutes from './routes';
+import configureStore from './store/configureStore';
+import headconfig from './components/Meta';
+const axios = require('axios');
 
 const clientConfig = {
   host: process.env.HOSTNAME || 'localhost',
   port: process.env.PORT || '3000'
 };
-
 
 // configure baseURL for axios requests (for serverside API calls)
 axios.defaults.baseURL = `http://${clientConfig.host}:${clientConfig.port}`;
@@ -59,12 +60,12 @@ export default function render(req, res) {
   const history = createMemoryHistory();
   // const authenticated = req.isAuthenticated();
   const store = configureStore({
-    user: {
-      // authenticated: authenticated,
-      isWaiting: false,
-      message: '',
-      isLogin: true
-    }
+    // user: {
+    //   // authenticated: authenticated,
+    //   isWaiting: false,
+    //   message: '',
+    //   isLogin: true
+    // }
   }, history);
 
   const routes = createRoutes(store);
@@ -96,10 +97,9 @@ export default function render(req, res) {
     } else if (redirectLocation) {
       res.redirect(302, redirectLocation.pathname + redirectLocation.search);
     } else if (renderProps) {
-
       const InitialView = (
         <Provider store={store}>
-          <RouterContext {...renderProps} />
+          <RouterContext {...renderProps as any} />
         </Provider>
       );
 
@@ -109,9 +109,9 @@ export default function render(req, res) {
           const componentHTML = renderToString(InitialView);
           const initialState = store.getState();
           res.status(200).end(renderFullPage(componentHTML, initialState, {
-            title: headconfig.title,
-            meta: headconfig.meta,
-            link: headconfig.link
+            title: headconfig.title as any,
+            meta: headconfig.meta as any,
+            link: headconfig.link as any
           }));
         })
         .catch(err => {

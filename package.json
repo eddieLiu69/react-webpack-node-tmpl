@@ -11,7 +11,7 @@
     "build:dev": "NODE_ENV=development webpack --colors --config ./webpack/webpack.config.dev-server.js",
     "build:prod": "NODE_ENV=production webpack --colors --config ./webpack/webpack.config.prod.js",
     "build": "npm run clean && npm run build:prod",
-    "watch": "tcm -w app & tsc",
+    "watch": "tcm . -p app/scss/**/*.scss -w & tsc",
     "test": "NODE_ENV=test karma start",
     "test:watch": "NODE_ENV=test npm test -- --watch --no-single-run",
     "postinstall": "npm run build"
@@ -36,6 +36,7 @@
     "redux-mock-store": "0.0.3",
     "sinon": "^1.17.3",
     "ts-loader": "^0.8.1",
+    "tsd": "^0.6.5",
     "typed-css-modules": "^0.1.6"
   },
   "engines": {

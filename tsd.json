@@ -112,6 +112,9 @@
     },
     "method-override/method-override.d.ts": {
       "commit": "00e8cf6e000aa1d70fb21bd1da6456c62136e231"
+    },
+    "react-helmet/react-helmet.d.ts": {
+      "commit": "0e139d5d4681b71d53a30408efcc64b79eed6354"
     }
   }
 }

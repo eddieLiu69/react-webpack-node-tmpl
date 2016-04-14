@@ -1,3 +1,4 @@
+/// <reference path="../typings/tsd.d.ts" />
 /*
  * Based on the template in Web Starter Kit : https://github.com/google/web-starter-kit/blob/master/app/index.html
  * To add to the config, add an object:
@@ -10,18 +11,18 @@
  */
 
 // Import all your needed files first (webpack will grab the url)
-import chromecon from 'images/chrome-ninja192-precomposed.png';
-import applecon from 'images/apple-ninja152-precomposed.png';
-import mscon from 'images/ms-ninja144-precomposed.png';
-import favicon from 'images/favicon.png';
+// import chromecon from 'images/chrome-ninja192-precomposed.png';
+// import applecon from 'images/apple-ninja152-precomposed.png';
+// import mscon from 'images/ms-ninja144-precomposed.png';
+const favicon = require('./images/favicon.png');
 
 const config = {
   link: [
     // Add to homescreen for Chrome on Android
     { 'rel': 'icon', 'href': favicon },
-    { 'rel': 'icon', 'sizes': '192x192', 'href': chromecon },
+    //{ 'rel': 'icon', 'sizes': '192x192', 'href': chromecon },
     // Add to homescreen for Safari on IOS
-    { 'rel': 'apple-touch-icon', 'sizes': '152x152', applecon },
+    //{ 'rel': 'apple-touch-icon', 'sizes': '152x152', applecon },
     { 'rel': 'stylesheet', 'href': 'https://fonts.googleapis.com/css?family=Roboto+Condensed', 'type': 'text/css' },
     { 'rel': 'stylesheet', 'href': '/assets/styles/main.css' }
     // SEO: If your mobile URL is different from the desktop URL,
@@ -45,7 +46,7 @@ const config = {
     { 'name': 'apple-mobile-web-app-status-bar-style', 'content': 'black' },
     { 'name': 'apple-mobile-web-app-title', 'content': 'React Webpack Node' },
     // Tile icon for Win8 (144x144 + tile color)
-    { 'name': 'msapplication-TileImage', 'content': mscon },
+    //{ 'name': 'msapplication-TileImage', 'content': mscon },
     { 'name': 'msapplication-TileColor', 'content': '#3372DF' }
   ]
 };
