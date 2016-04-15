@@ -1,9 +1,10 @@
 import { createStore, applyMiddleware } from 'redux';
 import { routerMiddleware } from 'react-router-redux';
-import * as thunk from 'redux-thunk';
 import rootReducer from '../reducers/index';
+import thunk from 'redux-thunk';
 import promiseMiddleware from '../api/promiseMiddleware';
 import * as createLogger from 'redux-logger';
+
 declare var __DEV__: boolean;
 /*
  * @param {Object} initial state to bootstrap our stores with for server-side rendering
