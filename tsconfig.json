@@ -18,6 +18,8 @@
   "exclude": [
     "node_modules",
     "app",
-    "wwwroot"
+    "wwwroot",
+    "typings/browser",
+    "typings/browser.d.ts"
   ]
 }

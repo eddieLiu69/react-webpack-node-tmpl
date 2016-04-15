@@ -1,4 +1,4 @@
-/// <reference path="../typings/tsd.d.ts" />
+/// <reference path="../typings/main.d.ts" />
 /*
  * Based on the template in Web Starter Kit : https://github.com/google/web-starter-kit/blob/master/app/index.html
  * To add to the config, add an object:

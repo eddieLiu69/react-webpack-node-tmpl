@@ -1,4 +1,4 @@
-/// <reference path="../../typings/tsd.d.ts" />
+/// <reference path="../../typings/main.d.ts" />
 import * as _ from 'lodash';
 import {
   GET_COMMENTS_REQUEST,
