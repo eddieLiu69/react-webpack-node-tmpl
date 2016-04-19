@@ -39,6 +39,12 @@ module.exports = function(config) {
       module: {
         loaders: [
           {
+            test: /\.tsx?$/,
+            loader: 'ts-loader',
+            include: path.join(__dirname, 'app'),
+            exclude: path.join(__dirname, 'node_modules/')    
+          },
+          {
             test: /\.js$|\.jsx$/,
             exclude: [
               path.resolve('node_modules/')
@@ -51,7 +57,7 @@ module.exports = function(config) {
         ],
       },
       resolve: {
-        extensions: ['', '.js', '.jsx', '.scss'],
+        extensions: ['', '.js', '.jsx', '.scss', '.ts', '.tsx'],
         modulesDirectories: [
           'app', 'node_modules'
         ]

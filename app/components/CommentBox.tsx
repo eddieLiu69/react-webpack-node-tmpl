@@ -1,3 +1,5 @@
+/// <reference path="../../typings/main.d.ts" />
+
 import * as React from 'react';
 
 interface ICommentProps extends React.Props<any>, React.HTMLAttributes {
