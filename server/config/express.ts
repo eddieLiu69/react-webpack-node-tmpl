@@ -15,7 +15,7 @@ import * as path from "path";
 import * as methodOverride from "method-override";
 import * as cookieParser from 'cookie-parser';
 
-import htcAuth from './htcAuth';
+import htcAuth from './auth';
 
 const init = (app) => {
   app.set("port", (process.env.PORT || 3000));
