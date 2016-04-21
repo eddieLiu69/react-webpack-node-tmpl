@@ -13,6 +13,9 @@ import * as path from "path";
 // TODO: Needs to check the purpose of express-flash package 
 // var flash = require("express-flash");
 import * as methodOverride from "method-override";
+import * as cookieParser from 'cookie-parser';
+
+import htcAuth from './htcAuth';
 
 const init = (app) => {
   app.set("port", (process.env.PORT || 3000));
@@ -25,6 +28,8 @@ const init = (app) => {
 
   app.set("view cache", false);
 
+  app.use(cookieParser());
+  app.use(htcAuth({ loginUrl: "/", ignorePatterns: ["^/assets/", "^/api/"] }));
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
   app.use(methodOverride());
