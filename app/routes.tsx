@@ -7,6 +7,7 @@ import Repo from './components/Repo';
 import Home from './components/Home';
 import CommentBoard from './containers/Comment';
 import FilterableProductTable from './components/Product';
+import TodoApp from './containers/Todo';
 
 /*
  * @param {Redux Store}
@@ -44,6 +45,7 @@ export default (store) => {
         <Route path="/about" component={About}/>
         <Route path="/comments" component={CommentBoard}/>
         <Route path="/products" component={FilterableProductTable}/>
+        <Route path="/todos" component={TodoApp}/>
     </Route>
   );
 };
