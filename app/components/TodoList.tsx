@@ -28,21 +28,19 @@ export class TodoList extends Component<{ onTodoClick: (id) => any, todos: any[]
   }
 }
 
-export const AddTodo = ({
-  onAddTodoClick
-}: {
-  onAddTodoClick: (text: string) => any
-}) => {
-  let input;
-  return (
-    <div>
-      <input ref={ inp => input = inp }/>
-      <button onClick={
-        () => {
-          onAddTodoClick(input.value);
-          input.value = '';
-        } }>Add Todo</button>
-    </div>
-  );
-};
-
+export class AddTodo extends Component<{onAddTodoClick: (text: string) => any}, any> {
+  render() {
+    const { onAddTodoClick } = this.props;
+    let input;
+    return (
+      <div>
+        <input ref={ inp => input = inp }/>
+        <button onClick={
+          () => {
+            onAddTodoClick(input.value);
+            input.value = '';
+          } }>Add Todo</button>
+      </div>
+    );  
+  }
+}

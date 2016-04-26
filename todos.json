@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "text": "Learn Redux",
+        "completed": false
+    },
+    {
+        "id": 2,
+        "text": "Learn Scala",
+        "completed": false    
+    },
+    {
+        "id": 3,
+        "text": "Learn React",
+        "completed": true    
+    },
+    {
+        "id": 4,
+        "text": "Learn Node",
+        "completed": true    
+    },
+    {
+        "id": 5,
+        "text": "Learn Functional Reactive Programming",
+        "completed": false    
+    }
+]

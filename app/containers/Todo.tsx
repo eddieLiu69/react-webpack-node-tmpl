@@ -9,28 +9,26 @@ import { TodoList, AddTodo as AddTodoComp } from '../components/TodoList';
 const mapDispatchToAddTodoProps = (dispatch) => ({
   onAddTodoClick: (text) => dispatch(addTodo(text))
 });
-
 export const AddTodo = connect(null, mapDispatchToAddTodoProps)(AddTodoComp);
 
-const Link = ({
-  active,
-  children,
-  onClick
-}: {
+class Link extends Component<{
   active: boolean,
   children: any,
   onClick: () => any
-}) => {
-  if (active) {
-    return (<span>{children}</span>);
-  }
+}, any> {
+  render() {
+    const { active, children, onClick } = this.props;
+    if (active) {
+      return (<span>{children}</span>);
+    }
 
-  return (
-    <a href="void(0)" onClick={(e) => {
-      e.preventDefault();
-      onClick();
-    } }>{children}</a>
-  );
+    return (
+      <a href="void(0)" onClick={(e) => {
+        e.preventDefault();
+        onClick();
+      } }>{children}</a>
+    );
+  }
 }
 const mapStateToLinkProps = (state, ownProps) => {
 	return {
@@ -47,26 +45,27 @@ export const FilterLink = connect(
   mapDispatchToLinkProps
 )(Link);
 
-const Footer = () => {
-	return (
-    <p>
-    Show:
-    {" "} 
-    <FilterLink 
-    	filter="SHOW_ALL"
-    >All</FilterLink>
-    {" "} 
-    <FilterLink 
-    	filter="SHOW_ACTIVE"
-    >Active</FilterLink>
-    {" "} 
-    <FilterLink 
-    	filter="SHOW_COMPLETED"
-    >Completed</FilterLink>
-    </p>
-  );
-};
-
+class Footer extends Component<{}, any> {
+  render() {
+    return (
+      <p>
+      Show:
+      {" "} 
+      <FilterLink 
+        filter="SHOW_ALL"
+      >All</FilterLink>
+      {" "} 
+      <FilterLink 
+        filter="SHOW_ACTIVE"
+      >Active</FilterLink>
+      {" "} 
+      <FilterLink 
+        filter="SHOW_COMPLETED"
+      >Completed</FilterLink>
+      </p>
+    );
+  }
+}
 
 const mapStateToToDoListProps = (state) => {
 	return {
@@ -93,5 +92,4 @@ const TodoApp = () => {
         </form>
     );
 };
-
 export default TodoApp;

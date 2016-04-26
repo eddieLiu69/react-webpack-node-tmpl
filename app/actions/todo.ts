@@ -1,6 +1,10 @@
+/// <reference path="../../typings/main.d.ts" />
+
+import * as request from 'axios';
 import {
   ADD_TODO,
   TOGGLE_TODO,
+  GET_TODOS,
   SET_VISIBILITY_FILTER,
   SHOW_ALL, 
   SHOW_ACTIVE, 
@@ -22,6 +26,13 @@ export const toggleTodo = (id) => {
     id
   };
 }; 
+
+export function fetchTodos() {
+  return {
+    type: GET_TODOS,
+    promise: request.get('/api/todos')
+  };
+}
 
 export const setVisibilityFilter = (filter) => {
 	return {

@@ -2,6 +2,7 @@
  * Routes for express app
  */
 import * as comments from "../controllers/comments";
+import * as todos from "../controllers/todos";
 import * as express from "express";
 import * as _ from "lodash";
 import * as path from "path";
@@ -17,6 +18,8 @@ const routes = (app) => {
   app.post("/api/comments", (req, res) => {
     comments.createComments(req, res);
   });
+  
+  app.get("/api/todos", todos.getTodos);
 
   // This is where the magic happens. We take the locals data we have already
   // fetched and seed our stores with data.

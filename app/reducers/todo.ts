@@ -4,7 +4,10 @@ import {
   ADD_TODO,
   TOGGLE_TODO,
   SET_VISIBILITY_FILTER,
-  SHOW_ALL
+  SHOW_ALL,
+  GET_TODOS_REQUEST,
+  GET_TODOS_SUCCESS,
+  GET_TODOS_FAILURE
 } from '../constants/todo';
 
 const todo = (state, action) => {
@@ -27,14 +30,38 @@ const todo = (state, action) => {
   }
 };
 
-export const todos = (state = [], action) => {
+export const todos = (state = {
+  todos: [],
+  isFetching: false,
+  isLoaded: false
+}, action) => {
+  const { todos, isFetching, isLoaded } = state;
+  
   switch (action.type) {
     case ADD_TODO: {
-      return [...state, todo(undefined, action)];
+      return _.assign({}, state, {
+        todos: [...todos, todo(undefined, action)]
+      });
     }
     case TOGGLE_TODO: {
-      return state.map(t => todo(t, action));
+      return _.assign({}, state, {
+        todos: todos.map(t => todo(t, action))
+      });
     }
+    case GET_TODOS_REQUEST:
+      return _.assign({}, state, {
+        isFetching: true
+      });
+    case GET_TODOS_SUCCESS:
+      return _.assign({}, state, {
+        isFetching: false,
+        isLoaded: true,
+        todos: action.req.data
+      });
+    case GET_TODOS_FAILURE:
+      return _.assign({}, state, {
+        isFetching: false
+      });    
     default: {
       return state;
     }
