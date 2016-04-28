@@ -1,22 +1,24 @@
 import * as path from "path";
 import * as fs from "fs";
+import {Request, Response} from 'express';
 
-const COMMENTS_FILE = path.join(__dirname, "..", "..", "todos.json");
+const TODO_FILE = path.join(__dirname, "..", "..", "todos.json");
 
 export const getTodos = (req, res) => {
-  fs.readFile(COMMENTS_FILE, (err, data: any) => res.json(JSON.parse(data)));
+  fs.readFile(TODO_FILE, (err, data: any) => res.json(JSON.parse(data)));
 }
 
-// export const createComments = (req, res) => {
-//   fs.readFile(COMMENTS_FILE, (err, data: any) => {
-//     let comments = JSON.parse(data),
-//       newComment = {
-//         key: Date.now(),
-//         author: req.body.author,
-//         text: req.body.text,
-//       };
-    
-//     comments.push(newComment);
-//     fs.writeFile(COMMENTS_FILE, JSON.stringify(comments, null, 4), (err) => res.json(comments));
-//   });
-// }
+export const createTodo = (req: Request, res: Response) => {
+  fs.readFile(TODO_FILE, (err, data: any) => {
+    let todos = JSON.parse(data),
+      newTodo = {
+        id: Date.now(),
+        text: req.body.text,
+      };
+
+    todos.push(newTodo);
+    fs.writeFile(TODO_FILE, JSON.stringify(todos, null, 4), (err) => {
+      res.json(todos);
+    });
+  });
+}

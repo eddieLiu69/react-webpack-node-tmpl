@@ -20,6 +20,8 @@ const routes = (app) => {
   });
   
   app.get("/api/todos", todos.getTodos);
+  
+  app.post("/api/todos", todos.createTodo);
 
   // This is where the magic happens. We take the locals data we have already
   // fetched and seed our stores with data.

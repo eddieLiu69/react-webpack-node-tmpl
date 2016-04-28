@@ -2,6 +2,8 @@
 import * as _ from 'lodash';
 import {
   ADD_TODO,
+  ADD_TODO_REQUEST,
+  ADD_TODO_FAILURE,
   TOGGLE_TODO,
   SET_VISIBILITY_FILTER,
   SHOW_ALL,
@@ -43,6 +45,14 @@ export const todos = (state = {
         todos: [...todos, todo(undefined, action)]
       });
     }
+    case ADD_TODO_REQUEST:
+      return _.assign({}, state, {
+        todos: [...state.todos, { id: action.id, text: action.text }]
+      });
+    case ADD_TODO_FAILURE:
+      return _.assign({}, state, {
+        todos: state.todos.filter(val => val.id !== action.id)
+      });
     case TOGGLE_TODO: {
       return _.assign({}, state, {
         todos: todos.map(t => todo(t, action))

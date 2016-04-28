@@ -3,11 +3,11 @@
 import * as React from 'react';
 import { Component } from 'react';
 import { connect } from 'react-redux';
-import { addTodo, setVisibilityFilter, todoFilter, toggleTodo, fetchTodos } from '../actions/todo';
+import { createTodo, setVisibilityFilter, todoFilter, toggleTodo, fetchTodos } from '../actions/todo';
 import { TodoList, AddTodo as AddTodoComp } from '../components/TodoList';
 
 const mapDispatchToAddTodoProps = (dispatch) => ({
-  onAddTodoClick: (text) => dispatch(addTodo(text))
+  onAddTodoClick: (text) => dispatch(createTodo({text}))
 });
 export const AddTodo = connect(null, mapDispatchToAddTodoProps)(AddTodoComp);
 

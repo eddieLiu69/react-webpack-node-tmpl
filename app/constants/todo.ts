@@ -1,7 +1,3 @@
-export const ADD_TODO = "ADD_TODO";
-export const TOGGLE_TODO = "TOGGLE_TODO";
-export const SET_VISIBILITY_FILTER = "SET_VISIBILITY_FILTER";
-
 export const SHOW_ALL = "SHOW_ALL";
 export const SHOW_ACTIVE = "SHOW_ACTIVE";
 export const SHOW_COMPLETED = "SHOW_COMPLETED";
@@ -10,3 +6,11 @@ export const GET_TODOS = "GET_TODOS";
 export const GET_TODOS_REQUEST = "GET_TODOS_REQUEST";
 export const GET_TODOS_SUCCESS = "GET_TODOS_SUCCESS";
 export const GET_TODOS_FAILURE = "GET_TODOS_FAILURE";
+
+export const ADD_TODO = "ADD_TODO";
+export const ADD_TODO_REQUEST = "ADD_TODO_REQUEST";
+export const ADD_TODO_SUCCESS = "ADD_TODO_SUCCESS";
+export const ADD_TODO_FAILURE = "ADD_TODO_FAILURE";
+
+export const TOGGLE_TODO = "TOGGLE_TODO";
+export const SET_VISIBILITY_FILTER = "SET_VISIBILITY_FILTER";
