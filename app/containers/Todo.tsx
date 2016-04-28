@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { Component } from 'react';
 import { connect } from 'react-redux';
-import { addTodo, setVisibilityFilter, todoFilter, toggleTodo } from '../actions/todo';
+import { addTodo, setVisibilityFilter, todoFilter, toggleTodo, fetchTodos } from '../actions/todo';
 import { TodoList, AddTodo as AddTodoComp } from '../components/TodoList';
 
 const mapDispatchToAddTodoProps = (dispatch) => ({
@@ -69,12 +69,17 @@ class Footer extends Component<{}, any> {
 
 const mapStateToToDoListProps = (state) => {
 	return {
-  	todos: [...state.todos.filter(todoFilter(state.visibilityFilter))],
+  	todos: [...state.todo.todos.filter(todoFilter(state.visibilityFilter))],
   };
 };
 const mapDispatchToToDoListProps = (dispatch) => {
 	return {
-  	onTodoClick: id => dispatch(toggleTodo(id))
+  	onTodoClick: id => dispatch(toggleTodo(id)),
+    onMount: () => {
+      console.log("onMount");
+      if (!window["__INITIAL_STATE__"]["todo"]["isLoaded"])
+        TodoApp["need"].forEach((val) => dispatch(val()));
+    },
   };
 }; 
 const VisibleTodoList = connect(
@@ -83,7 +88,6 @@ const VisibleTodoList = connect(
 )(TodoList);
 
 const TodoApp = () => {
-  	//console.log(`Current state: ${JSON.stringify(this.props)}`);
   	return (
         <form onSubmit={ (e) => e.preventDefault() }>
           <AddTodo />
@@ -92,4 +96,6 @@ const TodoApp = () => {
         </form>
     );
 };
+TodoApp["need"] = [fetchTodos];
+
 export default TodoApp;

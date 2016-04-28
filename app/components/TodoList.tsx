@@ -14,7 +14,15 @@ export class Todo extends Component<{ onClick: Function, completed: boolean, tex
   }
 }
 
-export class TodoList extends Component<{ onTodoClick: (id) => any, todos: any[] }, any> {
+export class TodoList extends Component<{
+  onTodoClick: (id) => any,
+  onMount: () => void,
+  todos: any[]
+}, any> {
+  componentDidMount() {
+    this.props.onMount();
+  }
+
   render() {
     const {onTodoClick, todos} = this.props;
     return (
@@ -28,7 +36,7 @@ export class TodoList extends Component<{ onTodoClick: (id) => any, todos: any[]
   }
 }
 
-export class AddTodo extends Component<{onAddTodoClick: (text: string) => any}, any> {
+export class AddTodo extends Component<{ onAddTodoClick: (text: string) => any }, any> {
   render() {
     const { onAddTodoClick } = this.props;
     let input;
@@ -41,6 +49,6 @@ export class AddTodo extends Component<{onAddTodoClick: (text: string) => any}, 
             input.value = '';
           } }>Add Todo</button>
       </div>
-    );  
+    );
   }
 }
